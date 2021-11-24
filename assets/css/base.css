@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+:root {
+   --white-color: #fff;
+   --black-color: #000;
+   --text-color: #333;
+   --color-primary: #f63f2e;
+   --border-color: #dbdbdb;
+   --star-gold-color: #ffce3d;
+   --header-heght: 119px;
+   --navbar-height: 35px;
+   --header-with-search-hight: calc(var(--header-heght) - var(--navbar-height));
+   --header-height-sortbars: 46px;
+}
+
+* {
+   box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+/* animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--grow-form));
+    } to {
+        transform: scale(var(--grow-to));
+    }
+}
+
+
+/* modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.25s;
+    display: none;
+}
+
+.modal.modal-active {
+    display: flex;
+}
+
+.modal__overplay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: none;
+}
+
+.modal__overplay.overplay-active {
+    display: block;
+}
+
+.modal__body {
+    --grow-form: 0.7;
+    --grow-to: 1;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    animation: growth linear 0.15s;
+}
+
+/* button style */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding:0px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 12px;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.btn.btn-primary {
+    color: var(--white-color);
+    background-color: var(--color-primary);
+}
+
+.btn.btn-disabled {
+    cursor: default;
+    color: #949494;
+    background-color: #c3c3c3;
+}
+
+.home-btn-select-input {
+    min-width: 200px;
+    height: 34px;
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: var(--white-color);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+.pagination-item {
+    list-style: none;
+}
+.pagination-item__link {
+   display:block;
+   text-decoration: none;
+   padding: 8px 16px;
+   font-size: 1.8rem;
+   font-weight: 500;
+   border-radius: 3px;
+   color: #939393;
+}
+.pagination-item__link-active {
+    background-color: var(--color-primary);
+    color: var(--white-color);
+}
+.pagination-item-icon {
+    font-size: 1.8rem;
+    color: #939393;
+    font-weight: 600;
+}
+
+/* border */
+
+/* giỏ hàng */
+.sum-product-and-sum-cost {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin: 15px 0px;
+    padding: 8px 5px;
+}
+.sum-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 7px;
+    border-bottom: 1px solid #e7dfdf;
+ }
+.sum-product-and-sum-cost-title {
+    font-size: 1.5rem;
+}
+.sum-product-title {
+    font-size: 1.5rem;
+}
+.sum-product-number {
+    font-size: 1.5rem;
+}
+.sum-cost-content-title {
+   font-size: 1.5rem;
+}
+.sum-cost-content-number {
+    font-size: 1.5rem;
+}
